@@ -71,6 +71,9 @@
         var area_scale = d3.scaleLinear()
                     .range([0, maxArea]);
 
+        var colour_scale = d3.scaleQuantile()
+                    .range(colorbrewer.Reds[9]);
+
         var y_axis = d3.axisLeft(y_scale);
 
         var x_axis = d3.axisBottom(x_scale);
