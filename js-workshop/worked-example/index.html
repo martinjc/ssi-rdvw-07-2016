@@ -72,6 +72,12 @@
 
         var x_axis = d3.axisBottom(x_scale);
 
+        svg.append("g")
+          .attr("class", "y axis")
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + (height) + ")");
         /*
          *  DECLARATION BLOCK ENDS
          */
