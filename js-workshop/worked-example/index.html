@@ -145,6 +145,9 @@
                     var area = area_scale(+d.IQ);
                     var radius = Math.sqrt(area / Math.PI);
                     return radius;
+                })
+                .attr('fill', function(d){
+                    return colour_scale(d.Speed);
                 });
 
             d3.select('.x.axis')
