@@ -126,6 +126,7 @@
                 .attr('stroke-width', '0.5px');
 
             new_dots.merge(dots)
+                .transition(t)
                 .attr('cx', function(d){ return x_scale(d.Height); })
                 .attr('cy', function(d){ return y_scale(d.Weight); });
 
