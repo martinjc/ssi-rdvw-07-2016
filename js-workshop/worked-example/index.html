@@ -93,6 +93,10 @@
                 .attr('stroke', 'black')
                 .attr('stroke-width', '0.5px');
 
+            new_dots.merge(dots)
+                .attr('cx', function(d){ return d.Height * 5; })
+                .attr('cy', function(d){ return d.Weight * 5; });
+
         }
 
         // call the update on page load to intialise the visualisation
