@@ -62,6 +62,12 @@
             .append('g')
                 .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
+        var x_scale = d3.scaleLinear()
+                    .rangeRound([0, width]);
+
+        var y_scale = d3.scaleLinear()
+                    .rangeRound([height, 0]);
+
         /*
          *  DECLARATION BLOCK ENDS
          */
