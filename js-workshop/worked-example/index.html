@@ -68,6 +68,10 @@
         var y_scale = d3.scaleLinear()
                     .rangeRound([height, 0]);
 
+        var y_axis = d3.axisLeft(y_scale);
+
+        var x_axis = d3.axisBottom(x_scale);
+
         /*
          *  DECLARATION BLOCK ENDS
          */
