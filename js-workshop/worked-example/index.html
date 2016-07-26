@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSI - RDVW - D3 Example</title>
+    <!-- D3 Version 4 -->
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <!-- Colorbrewer Library for colour scales -->
+    <script src="//d3js.org/colorbrewer.v1.js"></script>
+    <!-- Minimal styling -->
+    <style>
+        html, body, #vis {
+            margin: 0;
+            height: 100%;
+            font-family: sans-serif;
+        }
+
+        form {
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Input values for data creation -->
+    <form>
+        <input type="button" onclick="update()" value="Update"/>
+        Max Height:
+        <input type="range" value="50" min="0" max="100" id="maximumHeight">
+        Max Weight:
+        <input type="range" value="50" min="0" max="100" id="maximumWeight">
+        Max IQ:
+        <input type="range" value="50" min="0" max="100" id="maximumIQ">
+        Max Speed:
+        <input type="range" value="50" min="0" max="100" id="maximumSpeed">
+    </form>
+
+    <!-- Visualisation will go here -->
+    <div id="vis"></div>
+
+    <!-- The code! -->
+    <script>
+
+        /*
+         *  DECLARATION BLOCK STARTS
+         */
+        var view_width = 500;
+        var view_height = 500;
+
+        var margin = {top: 50, bottom: 100, left: 100, right: 150};
+
+        var width = view_width - margin.left - margin.right;
+        var height = view_height - margin.top - margin.bottom;
+
+        var maxDataItems = 150;
+        var maxArea = 800;
+
+        var svg = d3.select('#vis')
+            .append('svg')
+                .attr('height', height + margin.top + margin.bottom)
+                .attr('width', width + margin.left + margin.right)
+            .append('g')
+                .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+        /*
+         *  DECLARATION BLOCK ENDS
+         */
+
+        function update() {
+            /*
+                Update function reads the input values, creates random data, and updates the visualisation accordingly
+            */
+            var maxHeightValue = d3.select('#maximumHeight').node().value;
+            var maxWeightValue = d3.select('#maximumWeight').node().value;
+            var maxIQ = d3.select('#maximumIQ').node().value;
+            var maxSpeed = d3.select('#maximumSpeed').node().value;
+
+            var exampleData = createRandomData(maxDataItems, maxHeightValue, maxWeightValue, maxIQ, maxSpeed);
+
+            var dots = svg.selectAll('.dot')
+                .data(exampleData);
+
+        }
+
+        // call the update on page load to intialise the visualisation
+        update();
+
+
+        function createRandomData(maxDataItems, maxHeightValue, maxWeightValue, maxIQValue, maxSpeedValue) {
+            /*
+             * function to create an array of random data objects of size X,
+             * where 1 <= X <= maxDataItems
+             * Each object has properties "Height", "Weight", "IQ", "Speed", with
+             * values V, where 1 <= V <= maxValue
+             */
+            var numDataItems = Math.floor((Math.random() * maxDataItems) + 1);
+            var d = [];
+            for(var i = 0; i < numDataItems; i++) {
+                var height = Math.floor((Math.random() * maxHeightValue) + 1);
+                var weight = Math.floor((Math.random() * maxWeightValue) + 1);
+                var iq = Math.floor((Math.random() * maxIQValue) + 1);
+                var speed = Math.floor((Math.random() * maxSpeedValue) + 1)
+                d.push({
+                    "Height": height,
+                    "Weight": weight,
+                    "IQ": iq,
+                    "Speed": speed
+                });
+            }
+            return d;
+        }
+    </script>
+
+</body>
+</html>
