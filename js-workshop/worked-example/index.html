@@ -116,6 +116,11 @@
                 .attr('cx', function(d){ return x_scale(d.Height); })
                 .attr('cy', function(d){ return y_scale(d.Weight); });
 
+            d3.select('.x.axis')
+                .call(x_axis);
+
+            d3.select('.y.axis')
+                .call(y_axis);
         }
 
         // call the update on page load to intialise the visualisation
