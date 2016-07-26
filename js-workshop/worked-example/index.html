@@ -101,6 +101,9 @@
             var maxIQ = d3.select('#maximumIQ').node().value;
             var maxSpeed = d3.select('#maximumSpeed').node().value;
 
+            var t = d3.transition()
+                .duration(2000);
+
             var exampleData = createRandomData(maxDataItems, maxHeightValue, maxWeightValue, maxIQ, maxSpeed);
 
             x_scale.domain([0, d3.max(exampleData, function(d){ return d.Height; })]);
