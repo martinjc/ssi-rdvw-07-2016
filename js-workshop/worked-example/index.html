@@ -78,6 +78,16 @@
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + (height) + ")");
+
+        svg.append("text")
+          .attr("transform", "translate(-30," + height/3 + ")rotate(-90)")
+          .attr("text-anchor", "end")
+          .text("Weight");
+
+        svg.append("text")
+          .attr("transform", "translate(" + width/2 +  "," + (height+30) + ")")
+          .attr("text-anchor", "end")
+          .text("Height");
         /*
          *  DECLARATION BLOCK ENDS
          */
