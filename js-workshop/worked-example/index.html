@@ -135,9 +135,11 @@
                 .attr('cy', function(d){ return y_scale(d.Weight); });
 
             d3.select('.x.axis')
+                .transition(t)
                 .call(x_axis);
 
             d3.select('.y.axis')
+                .transition(t)
                 .call(y_axis);
         }
 
