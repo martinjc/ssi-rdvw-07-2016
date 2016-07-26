@@ -111,6 +111,7 @@
 
             x_scale.domain([0, d3.max(exampleData, function(d){ return d.Height; })]);
             y_scale.domain([0, d3.max(exampleData, function(d){ return d.Weight; })]);
+            area_scale.domain(d3.extent(data, function(d){ return d.IQ; }));
 
             var dots = svg.selectAll('.dot')
                 .data(exampleData);
