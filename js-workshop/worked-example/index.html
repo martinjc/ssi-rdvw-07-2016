@@ -83,6 +83,9 @@
 
             var exampleData = createRandomData(maxDataItems, maxHeightValue, maxWeightValue, maxIQ, maxSpeed);
 
+            x_scale.domain([0, d3.max(exampleData, function(d){ return d.Height; })]);
+            y_scale.domain([0, d3.max(exampleData, function(d){ return d.Weight; })]);
+
             var dots = svg.selectAll('.dot')
                 .data(exampleData);
 
