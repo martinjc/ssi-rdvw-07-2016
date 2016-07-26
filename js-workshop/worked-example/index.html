@@ -111,7 +111,7 @@
 
             x_scale.domain([0, d3.max(exampleData, function(d){ return d.Height; })]);
             y_scale.domain([0, d3.max(exampleData, function(d){ return d.Weight; })]);
-            area_scale.domain(d3.extent(data, function(d){ return d.IQ; }));
+            area_scale.domain(d3.extent(exampleData, function(d){ return d.IQ; }));
 
             var dots = svg.selectAll('.dot')
                 .data(exampleData);
@@ -136,7 +136,12 @@
             new_dots.merge(dots)
                 .transition(t)
                 .attr('cx', function(d){ return x_scale(d.Height); })
-                .attr('cy', function(d){ return y_scale(d.Weight); });
+                .attr('cy', function(d){ return y_scale(d.Weight); })
+                .attr('r', function(d){
+                    var area = area_scale(+d.IQ);
+                    var radius = Math.sqrt(area / Math.PI);
+                    return radius;
+                });
 
             d3.select('.x.axis')
                 .transition(t)
