@@ -84,6 +84,15 @@
                 .exit()
                 .remove();
 
+            var new_dots = dots
+                .enter()
+                .append('circle')
+                .attr('class', 'dot')
+                .attr('r', 5)
+                .attr('fill', 'red')
+                .attr('stroke', 'black')
+                .attr('stroke-width', '0.5px');
+
         }
 
         // call the update on page load to intialise the visualisation
