@@ -80,6 +80,10 @@
             var dots = svg.selectAll('.dot')
                 .data(exampleData);
 
+            dots
+                .exit()
+                .remove();
+
         }
 
         // call the update on page load to intialise the visualisation
