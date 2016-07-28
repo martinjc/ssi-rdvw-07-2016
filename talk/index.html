@@ -1,0 +1,677 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SSI - Research Data Visualisation Workshop</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<link rel="stylesheet" href="css/pres.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Human Science Visualisation</h1>
+					<br>
+					<h2>Dr Martin Chorley</h2>
+					<p>
+						@martinjc
+					</p>
+					<img src="res/compdj.png" alt="CompDJ Course Logo" class="titlepage left">
+					<img src="res/uni_logo.jpg" alt="Cardiff Uni Logo" class="titlepage right">
+				</section>
+
+				<section>
+					<h1>Some (interesting) Visualisations to do with People</h1>
+					<br>
+					<h2>Dr Martin Chorley</h2>
+					<p>
+						@martinjc
+					</p>
+					<img src="res/compdj.png" alt="CompDJ Course Logo" class="titlepage left">
+					<img src="res/uni_logo.jpg" alt="Cardiff Uni Logo" class="titlepage right">
+				</section>
+
+ 				<section data-background-image="res/sc_vis.jpg" class="full">
+					<div class="attr"><small>Courtesy of Oak Ridge National Laboratory, U.S. Dept. of Energy</small></div>
+				</section>
+
+				<section data-background-image="res/command_line.png" class="full">
+
+				</section>
+				<!--
+				<section data-background-image="res/phd_plot.png" class="full">
+
+				</section>
+				-->
+				<section data-background-image="res/crowd.jpg" class="full">
+					<div class="attr"><small>CC BY-NC 2.0 by <a href="https://www.flickr.com/photos/twenty_questions/6793287882/in/photolist-bminP9-95ggJ6-acHG79-qMMhCc-52wxZk-631grT-5eyr98-7X4QoR-4Cc9ix-9acCYi-58Syn2-8mSPVH-3SBgrV-6StJcc-jA1Nk2-63SK2C-ax1KjR-nm28EN-AGsq9z-4Sba62-4Tqmad-8T6gUm-k9F4bq-cCYjom-5SzMyc-hgjJCp-2R9AMr-pMBeb1-dkTfpD-91YT6t-dRGPYE-6wUdbT-71Bhsf-7kJVyz-LBTZV-ktuFVg-gLAsS8-dGbDc1-kBKDrE-fU4PB7-dYBrHd-7Ta4ro-agSmQ2-9fNChE-f2GaEu-6BQGkA-cPxoQ7-kF1Z3X-bmiqmQ-9c1EeL">Laura Billings</a></small></div>
+				</section>
+
+				<section data-background-image="res/brexit.jpg" class="full">
+					<div class="attr"><small>CC BY-ND 2.0 by <a href="https://www.flickr.com/photos/36593372@N04/27601370600/in/photolist-J43eS1-HR735R-JqCjEW-JtjPtz-JmhSWH-JqNR6Q-Hg6AFu-HB4G7U-Hv7kcN-Jji9Aw-Jvj7b6-J2fJpu-JqeL39-EsUHK4-J3LwxC-JkVXEc-JsTUk2-Hz78j5-JvbNHw-Hxi3Qp-JjQHNb-Hzwmb9-JtCeWn-J45EQU-HR4U8x-Jow5jL-Jq1ecC-JEuaGr-JmTa1Z-HR4uNX-J2RZMV-HQmL8N-JGz5QS-HMxbNY-Jjccfm-JKgGhz-JChVDb-JhZZ43-JjiMNG-JvqJ23-J3TTKo-JtsuP8-JiUNk5-JogbS9-AVZDxh-oL1KxV-HMhorX-Jx7gcz-JDanRW-HzJehW">Mick Baker</a></small></div>
+				</section>
+
+				<section data-background-image="res/noise.jpg" class="full">
+					<div class="attr"><small>CC BY-NC 2.0 by <a href="https://www.flickr.com/photos/duncan/84967293/in/photolist-8vtPk-ng4zzC-dWK7Mn-87jH6f-9nUMpR-4Uwfwx-areoZ2-GDKsW1-9N2guL-nKviU3-nKvcGx-o2SKxS-7fDbCH-dsU4Xa-fitpcM-9zp3z3-4Tknas-nLQdFn-qDJZsA-nZXkWu-7EZ8k-phTTrt-pqjZTv-dBLeKN-5FQNzv-inbd3a-rPX6B-nLQoy7-8hE5Ku-4UwfzD-5VwrxL-8hE5Cq-9EWYKG-4UAtJQ-fHSwDM-jiZry1-54E4mv-fHSwBB-wvDXE-bHQ9QM-cFLCx-dJ6Wjp-bWsES4-iRzma-iqGBCs-a5r9xQ-bc1rqg-5EZB2D-o42pjk-5R2kHd">duncan c</a></small></div>
+				</section>
+				<!--
+				<section>
+					<iframe width="960" height="720" src="https://www.youtube.com/embed/_nx5VN6hYgw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+				-->
+				<section data-background-image="res/degree_network.png" class="full">
+				</section>
+
+				<section class="full">
+					<div id="am-vis">
+
+					</div>
+					<script>
+					(function(){
+						var width = window.innerWidth-100;
+						var height = window.innerHeight-100;
+
+					    var force = d3.layout.force()
+					        .charge(-200)
+					        .gravity(0.7)
+					        .linkDistance(80)
+					        .linkStrength(3)
+					        .size([width, height]);
+
+					    var svg = d3.select("#am-vis").append("svg")
+					        .attr("width", width)
+					        .attr("height", height);
+
+					    d3.json("res/mutual_follow_graph.json", function(error, graph) {
+					      var nodes = graph.nodes.slice(),
+					          links = [],
+					          bilinks = [];
+
+					      graph.links.forEach(function(link) {
+					        var s = nodes[link.source],
+					            t = nodes[link.target],
+					            i = {}; // intermediate node
+					        nodes.push(i);
+					        links.push({source: s, target: i}, {source: i, target: t});
+					        bilinks.push([s, i, t]);
+					      });
+
+					      force
+					          .nodes(nodes)
+					          .links(links)
+					          .start();
+
+					      var link = svg.selectAll(".link")
+					          .data(bilinks)
+					        .enter().append("path")
+					          .attr("class", "link");
+
+					      var node = svg.selectAll(".node")
+					          .data(graph.nodes)
+					        .enter().append("g")
+					          .call(force.drag)
+					          .on("mouseover", fade(.2))
+					          .on("mouseout", fade(1));
+
+					      node.append("circle")
+					          .attr("class", "node")
+					          .attr("r", 12)
+					          .style("fill", function(d) { return d.colour; })
+
+					      node.append("title")
+					          .text(function(d) { return d.twitter; });
+
+					      node.append("text")
+					          .attr("dx", 12)
+					          .attr("dy", ".35em")
+							  .attr("class", "am")
+					          .text(function(d) { return d.name; })
+					          .style("stroke", "black")
+					          .style("stroke-width", "0.5px")
+					          .style("fill", function(d) { return d.colour; });
+
+					      force.on("tick", function() {
+					        link.attr("d", function(d) {
+					          return "M" + d[0].x + "," + d[0].y
+					              + "S" + d[1].x + "," + d[1].y
+					              + " " + d[2].x + "," + d[2].y;
+					        });
+					        node.attr("transform", function(d) {
+					          return "translate(" + d.x + "," + d.y + ")";
+					        });
+					      });
+
+					      var linkedByIndex = {};
+					      graph.links.forEach(function(d) {
+					          linkedByIndex[d.source + "," + d.target] = 1;
+					      });
+
+
+					      function isConnected(a, b) {
+					          return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+
+					      }
+
+					      function fade(opacity) {
+					          return function(d) {
+					              node.style("stroke-opacity", function(o) {
+					                  thisOpacity = isConnected(d, o) ? 1 : opacity;
+					                  this.setAttribute('fill-opacity', thisOpacity);
+					                  return thisOpacity;
+					              });
+
+					              link.style("stroke-opacity", opacity).style("stroke-opacity", function(o) {
+					                  return o[0] === d || o[2] === d ? 1 : opacity;
+					              });
+					          };
+					      }
+
+					    });
+					})();
+				    </script>
+				</section>
+
+				<section class="full">
+					<div id="am-vis2">
+					</div>
+					<script>
+					(function(){
+						var x = window.innerWidth-100;
+						var y = window.innerHeight-100;
+						var h = 800;
+
+						var x4 = x / 4,
+						    y4 = y / 4;
+
+						var foci = {
+						    "Labour": {x: x4, y: y4},
+						    "Conservative": {x: x-x4, y: y4},
+						    "Liberal Democrat":{x: x4, y: y-y4},
+						    "Plaid Cymru": {x: x-x4, y: y-y4 },
+							"UKIP": {x: x4, y: y-y4 }
+						};
+
+						var width = x - 40,
+						    height = y - 40;
+
+						var force = d3.layout.force()
+						    .linkDistance(300)
+						    .charge(-250)
+						    .linkStrength(.01)
+						    .size([width, height]);
+
+						var drag = force.drag()
+						    .on("dragstart", dragstart);
+
+						var svg = d3.select("#am-vis2").append("svg")
+						    .attr("width", width)
+						    .attr("height", height);
+
+						var link = svg.selectAll(".link");
+						var node = svg.selectAll(".node");
+
+						var nodes;
+
+						d3.json("res/mutual_follow_graph.json", function(error, graph) {
+
+						    nodes = graph.nodes;
+
+						    force
+						      .nodes(graph.nodes)
+						      .links(graph.links)
+						      .start();
+
+						    link = link.data(graph.links)
+						      .enter().append("line")
+						      .attr("class", "link");
+
+						    node = node.data(graph.nodes)
+						      .enter().append("g")
+						        .call(force.drag)
+						        .on("mouseover", fade(.1))
+						        .on("mouseout", fade(1))
+						        .on("dblclick", dblclick);
+
+						    node.append("circle")
+						      .attr("class", "node")
+						      .attr("r", 12)
+						      .style("fill", function(d) { return d.colour; });
+
+						    node.append("text")
+						      .attr("dx", 12)
+						      .attr("dy", ".35em")
+							  .attr("class", "am")
+						      .text(function(d) { return d.name; })
+						      .style("stroke", "black")
+						      .style("stroke-width", 0.5)
+						      .style("fill", function(d) { return d.colour; });
+
+						    var circle = svg.selectAll("circle");
+
+						    force.on("tick", function(e) {
+						        link.attr("x1", function(d) { return d.source.x; })
+						            .attr("y1", function(d) { return d.source.y; })
+						            .attr("x2", function(d) { return d.target.x; })
+						            .attr("y2", function(d) { return d.target.y; });
+
+						        var k = .1 * e.alpha;
+
+						        // Push nodes toward their designated focus.
+						        nodes.forEach(function(d, i) {
+						            d.y += (foci[d.party].y - d.y) * k;
+						            d.x += (foci[d.party].x - d.x) * k;
+						        });
+
+						        node.attr("transform", function(d) {
+						            return "translate(" + d.x + "," + d.y + ")";
+						        });
+
+						    });
+
+						    var linkedByIndex = {};
+						    graph.links.forEach(function(d) {
+						        linkedByIndex[d.source.twitter + "," + d.target.twitter] = 1;
+						    });
+
+						    function isConnected(a, b) {
+						        return linkedByIndex[a.twitter + "," + b.twitter] || linkedByIndex[b.twitter + "," + a.twitter] || a.twitter == b.twitter;
+						    }
+
+						    function fade(opacity) {
+						        return function(d) {
+						            node.style("stroke-opacity", function(o) {
+						                thisOpacity = isConnected(d, o) ? 1 : opacity;
+						                this.setAttribute('fill-opacity', thisOpacity);
+						                return thisOpacity;
+						            });
+
+						            link.style("stroke-opacity", opacity).style("stroke-opacity", function(o) {
+						                return o.source.twitter === d.twitter || o.target.twitter === d.twitter ? 1 : opacity;
+						            });
+						        };
+						    }
+
+						});
+
+						function dblclick(d) {
+						    var g = d3.select(this)[0];
+						    d3.select(g[0].firstChild).classed("fixed", d.fixed = false);
+						}
+
+						function dragstart(d) {
+						    var g = d3.select(this)[0];
+						    d3.select(g[0].firstChild).classed("fixed", d.fixed = true);
+						}
+					})();
+					</script>
+
+				</section>
+
+				<section data-background-image="res/fb.png" class="full">
+
+				</section>
+
+
+				<section>
+					<form>
+			        <label for="sort">Sort AMs by:
+			          <select id="sort">
+			            <option value="party" selected="selected">Political Party</option>
+			            <option value="mentions">Mentions Made</option>
+			          </select>
+			        </label>
+			      </form>
+				  <div id="chord">
+		      	  </div>
+				  <script>
+				  (function(){
+					  var selected = d3.select("#sort").node()[d3.select("#sort").node().selectedIndex].value;
+					  var width = window.innerWidth-100;
+					  var height = window.innerHeight-100;
+					  height = height - 50;
+					  var last_chord = {};
+
+					  queue()
+					    .defer(d3.text, "res/mention_list.csv")
+					    .defer(d3.csv, "res/am_data.csv")
+					    .await(function(error, list, data) {
+
+					      d3.select("#sort").on("change", change);
+					      function change() {
+					        selected = this.options[this.selectedIndex].value
+					        draw();
+					      }
+
+					      var m = d3.csv.parse(list);
+
+					      // sort the AMs by party
+					      data.sort(function(a, b) {
+					        return a.party.localeCompare(b.party);
+					      })
+
+					      // extract the AM Twitter usernames
+					      var am_twitter = [];
+					      for(am in data) {
+							if(data[am].twitter) {
+								am_twitter.push(data[am].twitter);
+							}
+					      }
+
+					      // create a zero matrix for the data
+					      var matrix = [];
+
+					      for(am1 in am_twitter) {
+					        matrix.push([]);
+					        for(am2 in am_twitter) {
+					          matrix[am1].push(0);
+					        }
+					      }
+
+					      // loop through the list and add the mentions
+					      // data into the matrix
+					      for(m_i in m) {
+					        var mention = m[m_i];
+					        am1_index = am_twitter.indexOf("@" + mention.am1);
+					        am2_index = am_twitter.indexOf("@" + mention.am2);
+					        matrix[am1_index][am2_index] = +mention.mentions;
+					      }
+
+					      var outerRadius = (Math.min(width, height) / 2) - 160,
+					          innerRadius = outerRadius + 40;
+
+					      var arc = d3.svg.arc()
+					        .innerRadius(innerRadius)
+					        .outerRadius(outerRadius);
+
+					      var svg = d3.select("#chord").append("svg")
+					          .attr("width", width)
+					          .attr("height", height)
+					        .append("g")
+					          .attr("id", "circle")
+					          .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+					      var circle = svg.append("circle")
+					          .attr("r", outerRadius);
+
+					      var chord = d3.layout.chord()
+					        .padding(.045)
+					        .sortSubgroups(d3.descending)
+					        .sortChords(d3.descending)
+					        .matrix(matrix);
+
+					      var g = svg.selectAll(".group")
+					        .data(chord.groups())
+					      .enter()
+					        .append("g")
+					        .attr("class", "group")
+					        .on("mouseover", mouseover);
+
+					      g.append("path")
+					        .style("stroke", "black")
+					        .style("fill", function(d) {
+					          var index = d.index;
+					          var twitter = am_twitter[index]
+					          for(am in data){
+					            if(data[am]["twitter"] == twitter){
+					              return d3.rgb(data[am]["class"]);
+					            }
+					          }
+					          return "#000";
+					        })
+					        .attr("d", arc)
+					        .attr("class", arc);
+
+					      g.append("text")
+					        .each(function(d) {d.angle = (d.startAngle + d.endAngle) / 2; })
+					        .attr("dy", ".35em")
+					        .attr("class", "label")
+					        .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+					        .attr("transform", function(d) {
+					            return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+					                + "translate(" + (innerRadius + 5) + ")"
+					                + (d.angle > Math.PI ? "rotate(180)" : "");
+					          })
+					          .text(function(d) {
+					            var index = d.index;
+					            var twitter = am_twitter[index]
+					            for(am in data){
+					              if(data[am]["twitter"] == twitter){
+					                return data[am]["name"];
+					              }
+					            }
+					          });
+
+					      var chordPaths = svg.selectAll("path.chord")
+					        .data(chord.chords())
+					      .enter().append("path")
+					        .filter(function(d) {
+					          var am1_i = d.source.index;
+					          var am2_i = d.target.index;
+					          return matrix[am1_i][am2_i] > 0;
+					        })
+					        .attr("class", "chord")
+					        .style("stroke", function(d, i) {
+					          var twitter = am_twitter[d.source.index];
+					          for(am in data){
+					            if(data[am]["twitter"] == twitter){
+					              return d3.rgb(data[am]["class"]).darker();
+					            }
+					          }
+					          return "#000";
+					        })
+					        .style("fill", function(d, i) {
+					          var twitter = am_twitter[d.source.index];
+					          for(am in data){
+					            if(data[am]["twitter"] == twitter){
+					              return d3.rgb(data[am]["class"]);
+					            }
+					          }
+					          return "#000";
+					        })
+					        .attr("d", d3.svg.chord().radius(outerRadius));
+
+					        function mouseover(d, i) {
+					          chordPaths.classed("fade", function(p) {
+					            return p.source.index != i && p.target.index != i;
+					          });
+					        }
+
+					        last_chord = chord;
+
+
+					      function draw() {
+
+					        if(selected === "mentions") {
+					          var chord = d3.layout.chord()
+					            .padding(.045)
+					            .sortGroups(d3.ascending)
+					            .sortSubgroups(d3.descending)
+					            .sortChords(d3.descending)
+					            .matrix(matrix);
+					        } else {
+					          var chord = d3.layout.chord()
+					            .padding(.045)
+					            .sortSubgroups(d3.descending)
+					            .sortChords(d3.descending)
+					            .matrix(matrix);
+					        }
+
+					        svg.selectAll("path")
+					          .data(chord.groups())
+					          .transition()
+					          .duration(1500)
+					          .attrTween("d", arcTween(last_chord));
+
+					        svg.selectAll("text")
+					          .data(chord.groups())
+					          .each(function(d) {d.angle = (d.startAngle + d.endAngle) / 2; })
+					          .transition()
+					          .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+					          .transition()
+					          .duration(1500)
+					          .attr("transform", function(d) {
+					            return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+					                + "translate(" + (innerRadius + 5) + ")"
+					                + (d.angle > Math.PI ? "rotate(180)" : "");
+					          });
+
+					        svg.selectAll(".arc")
+					          .data(chord.groups)
+					          .transition()
+					          .duration(1500)
+					          .attrTween("d", arcTween(last_chord));
+
+					        svg.selectAll("path.chord")
+					          .data(chord.chords)
+					          .filter(function(d) {
+					            var am1_i = d.source.index;
+					            var am2_i = d.target.index;
+					            return matrix[am1_i][am2_i] > 0;
+					          })
+					          .transition()
+					          .duration(1500)
+					          .attrTween("d", chordTween(last_chord));
+
+					        last_chord = chord;
+					      }
+
+					      var chordl = d3.svg.chord().radius(outerRadius);
+
+					      function arcTween(chord) {
+					        return function(d, i) {
+					          var i = d3.interpolate(chord.groups()[i], d);
+					          return function(t) {
+					            return arc(i(t));
+					          }
+					        }
+					      }
+
+					      function chordTween(chord) {
+					        return function(d, i) {
+					          var i = d3.interpolate(chord.chords()[i], d);
+					          return function(t) {
+					            return chordl(i(t))
+					          }
+					        }
+					      }
+
+					      function mouseover(d, i) {
+					        chordPaths.classed("fade", function(p) {
+					          return p.source.index != i && p.target.index != i;
+					        });
+					      }
+
+
+					    });
+				  })();
+				  </script>
+				</section>
+
+				<section data-background-image="res/age.jpg">
+				</section>
+
+				<section data-background-image="res/age2.jpg" class="full">
+					<div class="attr dark"><small>Courtesy of <a href="https://www.twitter.com/bobbledavidson">@bobbledavidson</a></small></div>
+				</section>
+
+
+				<section>
+					<h2>Exploring/Understanding</h2>
+					<p>vs.</p>
+					<h2>Communicating</h2>
+				</section>
+
+
+				<section data-background-image="res/guardian.png" class="full">
+					<div class="attr dark"><small>Screenshot of <a href="http://www.theguardian.com/politics/ng-interactive/2015/feb/27/guardian-poll-projection">Guardian 2015 Election Coverage</a></small></div>
+
+				</section>
+				<!--
+				<section data-background-image="res/migration.png" class="full">
+					<div class="attr dark"><small>Screenshot of <a href="http://www.nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html">NYTimes The Upshot</a></small></div>
+
+				</section>
+
+				<section data-background-image="res/immigration.png" class="full">
+					<div class="attr dark"><small>Screenshot of <a href="http://www.nytimes.com/interactive/2014/08/13/upshot/where-people-in-each-state-were-born.html">NYTimes The Upshot</a></small></div>
+
+				</section>
+				-->
+				<section data-background-image="res/recession1.png" class="full">
+					<div class="attr dark"><small>Screenshot of <a href="http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html">NYTimes The Upshot</a></small></div>
+
+				</section>
+
+				<section data-background-image="res/recession2.png" class="full">
+					<div class="attr dark"><small>Screenshot of <a href="http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html">NYTimes The Upshot</a></small></div>
+
+				</section>
+
+				<section>
+					<h1>Don't be afraid to get complicated</h1>
+				</section>
+
+				<section>
+					<h1>Interaction is your friend</h1>
+					<h2>But how do we publish it?</h2>
+				</section>
+
+				<section>
+					<h1>Tip for communication:</h1>
+					<<h1>Watch what the newsrooms are doing</h1>
+				</section>
+
+				<section>
+					<h1>Some (interesting) Visualisations to do with People</h1>
+					<br>
+					<h2>Dr Martin Chorley</h2>
+					<p>
+						@martinjc
+					</p>
+					<img src="res/compdj.png" alt="CompDJ Course Logo" class="titlepage left">
+					<img src="res/uni_logo.jpg" alt="Cardiff Uni Logo" class="titlepage right">
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				width: "100%",
+				height: "100%",
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
